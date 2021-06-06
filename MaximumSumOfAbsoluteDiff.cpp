@@ -1,3 +1,4 @@
+//time: O(nlogn) and space: O(n)
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -33,5 +34,23 @@ int main() {
 	vector<int> arr = { 1, 2, 4, 8 };
 	cout << maxAbsoluteDiff(arr);
 	
+	
 	return 0;
+}
+//O(1) space
+long long int maxSum(int arr[], int n) {
+	sort(arr, arr + n);
+	long long sum = 0;
+	int j = n -1;
+	int temp =0;
+	for(int i = 0; i < n/2; i++){
+	    if (temp != 0){
+	        sum += temp - arr[i];
+	    }
+	    sum += arr[j] - arr[i];
+	    temp = arr[j];
+	    j--;
+	}
+	sum += temp - arr[0];
+	return sum;
 }
