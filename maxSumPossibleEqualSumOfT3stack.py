@@ -22,10 +22,10 @@ def maxSum(s1, s2, s3):
         if sum1 >= sum2 and sum1 >= sum3:
             sum1 -= s1[top1]
             top1 += 1
-        elif sum2 >= sum1 and sum2 >= sum3:
+        elif sum2 > sum1 and sum2 > sum3:
             sum2 -= s2[top2]
             top2 += 1
-        elif sum3 >= sum1 and sum3 >= sum2:
+        elif sum3 > sum1 and sum3 > sum2:
             sum3 -= s3[top3]
             top3 += 1
 stack1 = [ 3, 2, 1, 1, 1 ]
